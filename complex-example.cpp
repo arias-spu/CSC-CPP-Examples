@@ -12,12 +12,16 @@ struct Complex{
 	double imaginary;
 };
 
+
 void ReadComplex(Complex&, istream&);
 void PrintComplex(const Complex&, ostream&);
 void Initialize(Complex&);
 Complex sum(const Complex&, const Complex&);
 
 int main(){
+
+	cout << sizeof(Complex) << endl;
+
 	Complex var1, var2;
 	Initialize(var1);
 	Initialize(var2);
