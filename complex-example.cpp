@@ -1,11 +1,12 @@
 #include <iostream>
-
+#include <iomanip>
 
 using std::cout;
 using std::cin;
 using std::endl;
 using std::ostream;
 using std::istream;
+using std::showpos;
 
 struct Complex{
 	double real;
@@ -17,6 +18,9 @@ void ReadComplex(Complex&, istream&);
 void PrintComplex(const Complex&, ostream&);
 void Initialize(Complex&);
 Complex sum(const Complex&, const Complex&);
+
+Complex sub(const Complex&, const Complex&);
+
 
 int main(){
 
@@ -50,7 +54,25 @@ void ReadComplex(Complex& complex, istream& in){
 	in >> complex.real >> complex.imaginary;
 }
 void PrintComplex(const Complex& complex, ostream& out){
-	out << complex.real << " + " << complex.imaginary << "i";
+	if (complex.real == 0){
+		if (complex.imaginary == 0)
+			out << 0;
+		else if (complex.imaginary == 1)
+			out << "i";
+		else if (complex.imaginary == -1)
+			out << "-i";
+		else
+			out << complex.imaginary << "i";
+	}else { // the real part is not zero
+		if (complex.imaginary == 0)
+			out << complex.real;
+		else if (complex.imaginary == 1)
+			out << complex.real << " + i";
+		else if (complex.imaginary == -1) 
+			out << complex.real << " - i";
+		else
+			out << complex.real << showpos << complex.imaginary << "i";
+	}
 }
 void Initialize(Complex& complex){
 	complex.real = complex.imaginary = 0.0;
@@ -60,4 +82,11 @@ Complex sum(const Complex& lhs, const Complex& rhs){
 	retVal.real = lhs.real + rhs.real;
 	retVal.imaginary = lhs.imaginary + rhs.imaginary;
 	return retVal;
+}
+
+Complex sub(const Complex& lhs, const Complex& rhs){
+	Complex retVal;
+	retVal.real = lhs.real - rhs.real;
+	retVal.imaginary = lhs.imaginary - rhs.imaginary;
+	return retVal;	
 }
