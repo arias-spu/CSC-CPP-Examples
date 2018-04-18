@@ -5,16 +5,18 @@ using std::string;
 using std::ostream;
 using std::istream;
 
+const int MAX_GRADES = 3;
+
 struct Student{
 	string id;
 	string name;
-	int grade[3];
+	int grades[MAX_GRADES];
 };
 
 void Initialize(Student&);
 void WriteStudent(const Student&, ostream&);
 void ReadStudent(Student&, istream&);
 int GetGrade(const Student&, size_t);
-void SetGrade(Student&, size_t, int);
+bool SetGrade(Student&, size_t, int);
 int GetAverage(const Student&);
 

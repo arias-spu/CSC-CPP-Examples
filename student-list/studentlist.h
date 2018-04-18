@@ -6,7 +6,7 @@
 using std::string;
 using std::ostream;
 
-const int MAX_STUDENTS = 10;
+const int MAX_STUDENTS = 4;
 
 struct StudentList{
 	Student roster[MAX_STUDENTS];
