@@ -42,7 +42,7 @@ int main(){
 		}
 	}
 	
-
+	cout << "Politely Good Bye" << endl;
 	return 0;
 }
 

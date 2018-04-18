@@ -20,7 +20,7 @@ bool AddStudent(StudentList& list, const Student& student){
 	return true;
 }
 void SortStudents(StudentList& list){
-	if (list.size == 0)
+	if (list.size <= 1)
 		return;
 	for (size_t i = 0; i < list.size; i++)
 		for (size_t j = 0; j < list.size - i - 1; j++)
