@@ -5,6 +5,7 @@
 #include <iostream>
 using std::string;
 using std::ostream;
+using std::istream;
 using std::endl;
 
 
@@ -29,11 +30,26 @@ void SortStudents(StudentList& list){
 				list.roster[j] = list.roster[j + 1];
 				list.roster[j + 1] = temporal;
 			}
-		
+
 }
 void WriteStudentList(const StudentList& list, ostream& out){
 	for (size_t i = 0; i < list.size; i++){
 		WriteStudent(list.roster[i], out);
 		out << endl;
 	}
+}
+size_t StudentsListSize(const StudentList& list){
+	return list.size;
+}
+size_t ReadStudentList(StudentList& list, istream& input){
+	Student student;
+	size_t count = 0;
+	while (input){
+		ReadStudent(student, input);
+		if (AddStudent(list, student))
+			count++;
+		else
+			break;
+	}
+	return count;
 }
