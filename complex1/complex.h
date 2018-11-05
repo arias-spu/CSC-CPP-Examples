@@ -1,7 +1,7 @@
 #pragma once
 
 #include <string>
-#inclide <iostream>
+#include <iostream>
 using std::string;
 using std::ostream;
 using std::istream;
@@ -14,7 +14,7 @@ class Complex{
 		Complex Minus()const;
 		Complex Sum(const Complex&)const;
 		Complex Sub(const Complex&)const;
-		Complex Assign(const Complex&);
+		Complex& Assign(const Complex&);
 		void Print(ostream&)const;
 		void Read(istream&);
 };

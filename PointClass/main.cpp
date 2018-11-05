@@ -9,7 +9,7 @@ int main(){
 	cout << a.ToString() << endl << b.ToString() << endl;
 	cout << a.Distance(b) << endl;
 	
-	//cout << a._x << endl;
+//	cout << a._x << endl;
 	
 	return 0;
 }

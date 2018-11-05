@@ -7,6 +7,7 @@ using std::string;
 using std::istream;
 using std::ostream;
 using std::showpos;
+using std::stringstream;
 
 Complex::Complex(double real, double imag){
 	_real = real;
@@ -33,9 +34,9 @@ Complex& Complex::Assign(const Complex& rhs){
 	_imag = rhs._imag;
 	return *this;
 }
-void Complex::Print(ostream&)const{
-
+void Complex::Print(ostream& out)const{
+	out << _real << " " << _imag;
 }
-void Complex::Read(istream&){
-
+void Complex::Read(istream& input){
+	input >> _real >> _imag;
 }
