@@ -12,7 +12,7 @@ using std::endl;
 size_t CountLetter(char, ifstream&);
 
 int main(int argc, char* argv[]){
-	if (argc != 2){
+	if (argc != 3){
 		cerr << "Not enough parameters" << endl;
 		exit(1);
 	}
@@ -21,8 +21,9 @@ int main(int argc, char* argv[]){
 		cerr << "Unable to open file " << argv[1] << endl;
 		exit(1);
 	}
-	
-	cout << "There are " << CountLetter('a', inputFile) << " in file " << argv[1] << endl;
+	string letter = argv[2];
+	cout << "There are " << CountLetter(letter[0], inputFile) 
+		<< " " << letter[0] << " in file " << argv[1] << endl;
 
 	return 0;
 }
