@@ -4,7 +4,6 @@
 // Max Benson
 // 2018-01-08 
 #include <iostream>
-#
 using namespace std;
 
 int main()
