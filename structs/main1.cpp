@@ -6,7 +6,7 @@
 
 using namespace std;
 
-struct STUDENT 
+struct Student 
 {
 	string firstName;
 	string lastName;
@@ -16,7 +16,9 @@ struct STUDENT
 
 int main()
 {
-	STUDENT student;
+	Student student;
+	
+//	cin >> student;
 
 	cout << "First Name: ";
 	cin >> student.firstName;
@@ -31,6 +33,8 @@ int main()
 	cout << "Last Name: " << student.lastName << endl;
 	cout << "ID: " << student.ID << endl;
 	cout << "GPA: " << student.GPA << endl;
+
+//	cout << student << endl; 
 
 	return 0;
 }
