@@ -6,7 +6,7 @@
 
 using namespace std;
 
-struct STUDENT 
+struct Student 
 {
 	string firstName;
 	string lastName;
@@ -15,12 +15,12 @@ struct STUDENT
 };
 
 // Functions that act on STUDENT structs
-void WriteStudent(ostream& ostrm, const STUDENT& student);
+void WriteStudent(ostream& ostrm, const Student& student);
 
 // Main Program
 int main()
 {
-	STUDENT student;
+	Student student;
 
 	cout << "First Name: ";
 	cin >> student.firstName;
@@ -30,7 +30,8 @@ int main()
 	cin >> student.ID;
 	cout << "GPA: ";
 	cin >> student.GPA;
-
+//	ofstream outputFile("somefile.txt");
+//	WriteStudent(outputFile, student);
 	WriteStudent(cout, student);
 	
 	return 0;
@@ -40,7 +41,7 @@ int main()
 // ostrm - an ostream object
 // student - a STUDENT record
 // Returns: nothing
-void WriteStudent(ostream& ostrm, const STUDENT& student)
+void WriteStudent(ostream& ostrm, const Student& student)
 {
 	ostrm << "First Name: " << student.firstName << endl;
 	ostrm << "Last Name: " << student.lastName << endl;
