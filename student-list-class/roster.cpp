@@ -8,10 +8,19 @@ using std::ostream;
 using std::endl;
 using std::string;
 
-Roster::Roster(){
-	_count = 0;
+Roster::Roster():_count(0){
 }
 void Roster::Read(istream& input){
+	do{
+		if (_count < MAX_STUDENTS){
+			input >> _students[_count]._name;
+			for (size_t i=0; i < MAX_GRADES; i++)
+				input >> _students[_count]._grades[i];
+			_count++;
+		}else{
+			break;
+		}
+	}while (input);
 
 }
 void Roster::Write(ostream& output)const{
@@ -21,7 +30,7 @@ void Roster::Write(ostream& output)const{
 	}
 }
 int Roster::FindByName(const string& name, size_t start)const{
-	for (size_t i = start; i < _count; i +) {
+	for (size_t i = start; i < _count; i++) {
 		if (_students[i]._name == name)
 			return i;
 	}
