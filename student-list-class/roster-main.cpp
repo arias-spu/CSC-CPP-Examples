@@ -23,5 +23,8 @@ int main(int argc, char* argv[]){
 	roster.Read(data);
 	roster.Write(cout);
 	
+	cout << endl << endl << endl;
+	cout << roster.FindByName("John") << endl;
+
 	return 0;
 }
