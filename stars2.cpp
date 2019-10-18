@@ -4,6 +4,7 @@ using std::cin;
 using std::endl;
 
 int main(int argc, char* argv[]){
+	cout << sizeof(int) << endl;
 	int n;
 	cout << "n: ";
 	cin >> n;
